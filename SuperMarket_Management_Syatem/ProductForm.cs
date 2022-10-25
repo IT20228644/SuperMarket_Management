@@ -178,5 +178,8 @@ namespace SuperMarket_Management_Syatem
         {
             Datelbl.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm");
         }
+
     }
+    
 }
+
