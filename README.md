@@ -1,7 +1,6 @@
 # SuperMarket_Management_System
 
-Super Market Management Desktop Application with POS. 
-Inventory Management system is to be implemented to this system.
+Super Market Management Desktop Application with POS.
 
 HOW TO RUN?
 
