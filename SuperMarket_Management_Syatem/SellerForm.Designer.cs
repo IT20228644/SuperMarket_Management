@@ -55,6 +55,7 @@ namespace SuperMarket_Management_Syatem
             this.SellerPasswordTb = new System.Windows.Forms.MaskedTextBox();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.BtnLogout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SellersDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -396,11 +397,27 @@ namespace SuperMarket_Management_Syatem
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // BtnLogout
+            // 
+            this.BtnLogout.FlatAppearance.BorderSize = 0;
+            this.BtnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogout.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLogout.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.BtnLogout.Location = new System.Drawing.Point(10, 693);
+            this.BtnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnLogout.Name = "BtnLogout";
+            this.BtnLogout.Size = new System.Drawing.Size(125, 44);
+            this.BtnLogout.TabIndex = 28;
+            this.BtnLogout.Text = "LOGOUT";
+            this.BtnLogout.UseVisualStyleBackColor = true;
+            this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
+            // 
             // SellerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1347, 786);
+            this.Controls.Add(this.BtnLogout);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnNavSeller);
@@ -444,5 +461,6 @@ namespace SuperMarket_Management_Syatem
         private System.Windows.Forms.DataGridView SellersDataGridView;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label Datelbl;
+        private System.Windows.Forms.Button BtnLogout;
     }
 }

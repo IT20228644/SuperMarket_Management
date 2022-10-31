@@ -30,12 +30,12 @@ namespace SuperMarket_Management_Syatem
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.UserNameTb = new System.Windows.Forms.MaskedTextBox();
+            this.SellerUserNameTb = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CbUserRole = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.PasswordTb = new System.Windows.Forms.MaskedTextBox();
+            this.SellerPasswordTb = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.BtnClear = new System.Windows.Forms.Label();
@@ -45,16 +45,16 @@ namespace SuperMarket_Management_Syatem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // UserNameTb
+            // SellerUserNameTb
             // 
-            this.UserNameTb.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.UserNameTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.UserNameTb.Font = new System.Drawing.Font("Lucida Console", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNameTb.ForeColor = System.Drawing.Color.Gray;
-            this.UserNameTb.Location = new System.Drawing.Point(560, 201);
-            this.UserNameTb.Name = "UserNameTb";
-            this.UserNameTb.Size = new System.Drawing.Size(155, 23);
-            this.UserNameTb.TabIndex = 1;
+            this.SellerUserNameTb.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SellerUserNameTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SellerUserNameTb.Font = new System.Drawing.Font("Lucida Console", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SellerUserNameTb.ForeColor = System.Drawing.Color.Gray;
+            this.SellerUserNameTb.Location = new System.Drawing.Point(560, 201);
+            this.SellerUserNameTb.Name = "SellerUserNameTb";
+            this.SellerUserNameTb.Size = new System.Drawing.Size(155, 23);
+            this.SellerUserNameTb.TabIndex = 1;
             // 
             // label2
             // 
@@ -105,19 +105,17 @@ namespace SuperMarket_Management_Syatem
             this.label4.Size = new System.Drawing.Size(123, 29);
             this.label4.TabIndex = 8;
             this.label4.Text = "USERNAME";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // PasswordTb
+            // SellerPasswordTb
             // 
-            this.PasswordTb.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.PasswordTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PasswordTb.Font = new System.Drawing.Font("Lucida Console", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordTb.ForeColor = System.Drawing.Color.Gray;
-            this.PasswordTb.Location = new System.Drawing.Point(560, 263);
-            this.PasswordTb.Name = "PasswordTb";
-            this.PasswordTb.Size = new System.Drawing.Size(155, 23);
-            this.PasswordTb.TabIndex = 7;
-            this.PasswordTb.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox3_MaskInputRejected);
+            this.SellerPasswordTb.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SellerPasswordTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SellerPasswordTb.Font = new System.Drawing.Font("Lucida Console", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SellerPasswordTb.ForeColor = System.Drawing.Color.Gray;
+            this.SellerPasswordTb.Location = new System.Drawing.Point(560, 263);
+            this.SellerPasswordTb.Name = "SellerPasswordTb";
+            this.SellerPasswordTb.Size = new System.Drawing.Size(155, 23);
+            this.SellerPasswordTb.TabIndex = 7;
             // 
             // label3
             // 
@@ -131,7 +129,6 @@ namespace SuperMarket_Management_Syatem
             this.label3.Size = new System.Drawing.Size(121, 48);
             this.label3.TabIndex = 9;
             this.label3.Text = "LOGIN";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // BtnLogin
             // 
@@ -178,7 +175,6 @@ namespace SuperMarket_Management_Syatem
             this.label6.Size = new System.Drawing.Size(185, 48);
             this.label6.TabIndex = 14;
             this.label6.Text = "WELCOME";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // button4
             // 
@@ -221,16 +217,15 @@ namespace SuperMarket_Management_Syatem
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.PasswordTb);
+            this.Controls.Add(this.SellerPasswordTb);
             this.Controls.Add(this.CbUserRole);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.UserNameTb);
+            this.Controls.Add(this.SellerUserNameTb);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -242,14 +237,14 @@ namespace SuperMarket_Management_Syatem
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox CbUserRole;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox PasswordTb;
+        private System.Windows.Forms.MaskedTextBox SellerPasswordTb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnLogin;
         private System.Windows.Forms.Label BtnClear;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnMinimize;
-        public System.Windows.Forms.MaskedTextBox UserNameTb;
+        public System.Windows.Forms.MaskedTextBox SellerUserNameTb;
     }
 }
 

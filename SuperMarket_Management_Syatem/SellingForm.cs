@@ -22,13 +22,13 @@ namespace SuperMarket_Management_Syatem
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             //Datelbl.Text = DateTime.Today.Day.ToString() + ":" + DateTime.Today.Month.ToString() + ":" + DateTime.Today.Year.ToString()
-            Datelbl.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm");
+            Datelbl.Text = DateTime.Now.ToString("dd:MM:yyyy HH:mm");
         }
 
         private void populate()
         {
             Con.Open();
-            string query = "Select ProdName,ProdPrice from ProductTbl";
+            string query = "Select ProdName,ProdPrice,ProdQty from ProductTbl";
             SqlDataAdapter sda = new SqlDataAdapter(query, Con);
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
@@ -55,7 +55,7 @@ namespace SuperMarket_Management_Syatem
             fillCombo();
         }
 
-        int flag = 0;
+        
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -70,7 +70,8 @@ namespace SuperMarket_Management_Syatem
         private void SellingGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             ProdNameTb.Text = SellingGridView.SelectedRows[0].Cells[0].Value.ToString();
-            ProdPriceTb.Text = SellingGridView.SelectedRows[0].Cells[1].Value.ToString();
+            ProdPriceTb.Text = SellingGridView.SelectedRows[0].Cells[2].Value.ToString();
+            
         }
 
         private void Datelbl_Click(object sender, EventArgs e)
@@ -118,7 +119,7 @@ namespace SuperMarket_Management_Syatem
 
         private void BilldataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            flag =  1;
+            
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -126,7 +127,7 @@ namespace SuperMarket_Management_Syatem
             e.Graphics.DrawString("FAMILY SUPERMARKET", new Font("Arial", 16, FontStyle.Bold), Brushes.Black, new Point(300,60));
             e.Graphics.DrawString("Bill ID : " + BilldataGridView.SelectedRows[0].Cells[0].Value.ToString(), new Font("Arial", 13, FontStyle.Bold), Brushes.Black, new Point(70,120));
             e.Graphics.DrawString("Seller Name: " + BilldataGridView.SelectedRows[0].Cells[1].Value.ToString(), new Font("Arial", 13, FontStyle.Bold), Brushes.Black, new Point(70,145));
-            e.Graphics.DrawString("Date : " + BilldataGridView.SelectedRows[0].Cells[2].Value.ToString(), new Font("Arial", 13, FontStyle.Bold), Brushes.Black, new Point(70,170));
+            e.Graphics.DrawString("Date : " + DateTime.Now.ToString("dd mm yyyy HH:mm"), new Font("Arial", 13, FontStyle.Bold), Brushes.Black, new Point(70,170));
             e.Graphics.DrawString("Total Amount : " + BilldataGridView.SelectedRows[0].Cells[3].Value.ToString(), new Font("Arial", 13, FontStyle.Bold), Brushes.Black, new Point(70,195));
         }
 
@@ -154,13 +155,20 @@ namespace SuperMarket_Management_Syatem
         private void comboBox2_Selection_ChangeCommited(object sender, EventArgs e)
         {
             Con.Open();
-            string query = "select ProdName, ProdQty from ProductTbl where ProdCat='" + ddlProdCategory.SelectedValue.ToString();
+            string query = "select ProductCat from ProductTbl where ProdCat='" + SellingGridView.SelectedCells.ToString();
             SqlDataAdapter sda = new SqlDataAdapter(query, Con);
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
             sda.Fill(ds);
             SellingGridView.DataSource = ds.Tables[0];
             Con.Close();
+        }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 login = new Form1();
+            login.Show();
         }
 
         private void btnAddProductSelling_Click(object sender, EventArgs e)

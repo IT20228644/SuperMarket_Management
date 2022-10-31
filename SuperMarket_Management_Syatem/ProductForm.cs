@@ -179,6 +179,17 @@ namespace SuperMarket_Management_Syatem
             Datelbl.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm");
         }
 
+        private void ddlProdCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 login = new Form1();
+            login.Show();
+        }
     }
     
 }
