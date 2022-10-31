@@ -42,7 +42,7 @@ namespace SuperMarket_Management_Syatem
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnNavSelling = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnNavSeller = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -213,18 +213,19 @@ namespace SuperMarket_Management_Syatem
             this.label1.TabIndex = 15;
             this.label1.Text = "ID";
             // 
-            // button6
+            // btnNavSelling
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button6.Location = new System.Drawing.Point(12, 203);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 44);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "SELLING";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnNavSelling.FlatAppearance.BorderSize = 0;
+            this.btnNavSelling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNavSelling.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavSelling.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnNavSelling.Location = new System.Drawing.Point(12, 203);
+            this.btnNavSelling.Name = "btnNavSelling";
+            this.btnNavSelling.Size = new System.Drawing.Size(125, 44);
+            this.btnNavSelling.TabIndex = 15;
+            this.btnNavSelling.Text = "SELLING";
+            this.btnNavSelling.UseVisualStyleBackColor = true;
+            this.btnNavSelling.Click += new System.EventHandler(this.btnNavSelling_Click);
             // 
             // button5
             // 
@@ -361,7 +362,7 @@ namespace SuperMarket_Management_Syatem
             this.Controls.Add(this.BtnLogout);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnNavSelling);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btnNavSeller);
             this.Controls.Add(this.label3);
@@ -390,7 +391,7 @@ namespace SuperMarket_Management_Syatem
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnNavSelling;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnNavSeller;
         private System.Windows.Forms.Label label3;

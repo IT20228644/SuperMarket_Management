@@ -164,5 +164,12 @@ namespace SuperMarket_Management_Syatem
             Form1 login = new Form1();
             login.Show();
         }
+
+        private void btnNavSelling_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SellingForm selling = new SellingForm();
+            selling.Show();
+        }
     }
 }
