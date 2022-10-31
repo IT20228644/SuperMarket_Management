@@ -116,6 +116,7 @@ namespace SuperMarket_Management_Syatem
             this.SellerPasswordTb.Name = "SellerPasswordTb";
             this.SellerPasswordTb.Size = new System.Drawing.Size(155, 23);
             this.SellerPasswordTb.TabIndex = 7;
+            this.SellerPasswordTb.UseSystemPasswordChar = true;
             // 
             // label3
             // 

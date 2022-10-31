@@ -54,7 +54,6 @@ namespace SuperMarket_Management_Syatem
             this.label3 = new System.Windows.Forms.Label();
             this.btnNavSeller = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.BtnLogout = new System.Windows.Forms.Button();
@@ -393,20 +392,6 @@ namespace SuperMarket_Management_Syatem
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.btnNavCategory_Click);
             // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button6.Location = new System.Drawing.Point(8, 194);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 44);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "SELLING";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // button8
             // 
             this.button8.FlatAppearance.BorderSize = 0;
@@ -460,7 +445,6 @@ namespace SuperMarket_Management_Syatem
             this.Controls.Add(this.BtnLogout);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btnNavSeller);
             this.Controls.Add(this.label3);
@@ -485,7 +469,6 @@ namespace SuperMarket_Management_Syatem
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnNavSeller;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

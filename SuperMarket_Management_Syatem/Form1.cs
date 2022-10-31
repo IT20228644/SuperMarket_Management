@@ -18,6 +18,8 @@ namespace SuperMarket_Management_Syatem
             InitializeComponent();
         }
 
+        public static string SellerName = "";
+
         SqlConnection Con = new SqlConnection(@"Data Source=DESKTOP-3B3RLIP\SQLEXPRESS;Initial Catalog=SuperMarktDB;Integrated Security=True");
 
 
@@ -69,6 +71,7 @@ namespace SuperMarket_Management_Syatem
                         sda.Fill(dt);
                         if (dt.Rows[0][0].ToString() == "1")
                         {
+                            SellerName = SellerUserNameTb.Text;
                             SellingForm sell = new SellingForm();
                             sell.Show();
                             this.Hide();

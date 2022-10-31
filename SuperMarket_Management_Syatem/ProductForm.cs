@@ -59,8 +59,8 @@ namespace SuperMarket_Management_Syatem
         }
         private void btnNavSeller_Click(object sender, EventArgs e)
         {
-            SellerForm cat = new SellerForm();
-            cat.Show();
+            SellerForm seller = new SellerForm();
+            seller.Show();
             this.Hide();
         }
 

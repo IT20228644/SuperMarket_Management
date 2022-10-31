@@ -36,6 +36,8 @@ namespace SuperMarket_Management_Syatem
             SellingGridView.DataSource = ds.Tables[0];
             Con.Close();
         }
+
+
         private void populateBill()
         {
             Con.Open();
@@ -53,6 +55,7 @@ namespace SuperMarket_Management_Syatem
             populate();
             populateBill();
             fillCombo();
+            sellerNamelbl.Text = Form1.SellerName;
         }
 
         
@@ -92,7 +95,7 @@ namespace SuperMarket_Management_Syatem
                 try
                 {
                     Con.Open();
-                    string query = "Insert into BillTbl values(" + BillIDTb.Text + ", '" + sellerlbl.Text + "', '" + Datelbl.Text + "', '" + Amountlbl.Text + "')";
+                    string query = "Insert into BillTbl values(" + BillIDTb.Text + ", '" + sellerNamelbl.Text + "', '" + Datelbl.Text + "', '" + Amountlbl.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Order Added Successfully!");
@@ -119,7 +122,7 @@ namespace SuperMarket_Management_Syatem
 
         private void BilldataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            BillID2Tb.Text = BilldataGridView.SelectedRows[0].Cells[0].Value.ToString();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -134,6 +137,7 @@ namespace SuperMarket_Management_Syatem
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             populate();
+            populateBill();
         }
 
         private void fillCombo()
@@ -169,6 +173,52 @@ namespace SuperMarket_Management_Syatem
             this.Hide();
             Form1 login = new Form1();
             login.Show();
+        }
+
+        private void btnDeleteSelling_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (BillID2Tb.Text == "")
+                {
+                    MessageBox.Show("Select product to delete!");
+                }
+                else
+                {
+                    Con.Open();
+                    String query = "delete from BillTbl where BillId=" + BillID2Tb.Text + "";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Item Deleted Successfully!");
+                    Con.Close();
+                    populateBill();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnNavSeller_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SellerForm seller = new SellerForm();
+            seller.Show();
+        }
+
+        private void btnNavProducts_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ProductForm product = new ProductForm();
+            product.Show();
+        }
+
+        private void btnNavSelling_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SellingForm selling = new SellingForm();
+            selling.Show();
         }
 
         private void btnAddProductSelling_Click(object sender, EventArgs e)
